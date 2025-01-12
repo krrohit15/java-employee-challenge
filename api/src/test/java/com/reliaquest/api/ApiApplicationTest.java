@@ -35,53 +35,52 @@ class ApiApplicationTest {
         verify(employeeService, times(1)).getAllEmployees();
     }
 
-    /*
-        @Test
-        public void testGetEmployeesByNameSearch() {
-            String searchString = "John";
-            List<Employee> employees = List.of(new Employee(), new Employee());
-            when(employeeService.getEmployeesByNameSearch(searchString)).thenReturn(employees);
+    @Test
+    public void testGetEmployeesByNameSearch() {
+        String searchString = "John";
+        List<Employee> employees = List.of(new Employee(), new Employee());
+        when(employeeService.getEmployeesByNameSearch(searchString)).thenReturn(employees);
 
-            ResponseEntity<List<Employee>> response = employeeController.getEmployeesByNameSearch(searchString);
+        ResponseEntity<List<Employee>> response = employeeController.getEmployeesByNameSearch(searchString);
 
-            assertEquals(ResponseEntity.ok(employees), response);
-            verify(employeeService, times(1)).getEmployeesByNameSearch(searchString);
-        }
+        assertEquals(ResponseEntity.ok(employees), response);
+        verify(employeeService, times(1)).getEmployeesByNameSearch(searchString);
+    }
 
-        @Test
-        public void testGetEmployeeById() {
-            String id = "1";
-            Employee employee = new Employee();
-            when(employeeService.getEmployeeById(id)).thenReturn(employee);
+    @Test
+    public void testGetEmployeeById() {
+        String id = "1";
+        Employee employee = new Employee();
+        when(employeeService.getEmployeeById(id)).thenReturn(employee);
 
-            ResponseEntity<Employee> response = employeeController.getEmployeeById(id);
+        ResponseEntity<Employee> response = employeeController.getEmployeeById(id);
 
-            assertEquals(ResponseEntity.ok(employee), response);
-            verify(employeeService, times(1)).getEmployeeById(id);
-        }
+        assertEquals(ResponseEntity.ok(employee), response);
+        verify(employeeService, times(1)).getEmployeeById(id);
+    }
 
-        @Test
-        public void testGetHighestSalaryOfEmployees() {
-            int highestSalary = 100000;
-            when(employeeService.getHighestSalaryOfEmployees()).thenReturn(highestSalary);
+    @Test
+    public void testGetHighestSalaryOfEmployees() {
+        int highestSalary = 100000;
+        when(employeeService.getHighestSalaryOfEmployees()).thenReturn(highestSalary);
 
-            ResponseEntity<Integer> response = employeeController.getHighestSalaryOfEmployees();
+        ResponseEntity<Integer> response = employeeController.getHighestSalaryOfEmployees();
 
-            assertEquals(ResponseEntity.ok(highestSalary), response);
-            verify(employeeService, times(1)).getHighestSalaryOfEmployees();
-        }
+        assertEquals(ResponseEntity.ok(highestSalary), response);
+        verify(employeeService, times(1)).getHighestSalaryOfEmployees();
+    }
 
-        @Test
-        public void testGetTopTenHighestEarningEmployeeNames() {
-            List<String> employeeNames = List.of("John", "Jane");
-            when(employeeService.getTopTenHighestEarningEmployeeNames()).thenReturn(employeeNames);
+    @Test
+    public void testGetTopTenHighestEarningEmployeeNames() {
+        List<String> employeeNames = List.of("John", "Jane");
+        when(employeeService.getTopTenHighestEarningEmployeeNames()).thenReturn(employeeNames);
 
-            ResponseEntity<List<String>> response = employeeController.getTopTenHighestEarningEmployeeNames();
+        ResponseEntity<List<String>> response = employeeController.getTopTenHighestEarningEmployeeNames();
 
-            assertEquals(ResponseEntity.ok(employeeNames), response);
-            verify(employeeService, times(1)).getTopTenHighestEarningEmployeeNames();
-        }
-    */
+        assertEquals(ResponseEntity.ok(employeeNames), response);
+        verify(employeeService, times(1)).getTopTenHighestEarningEmployeeNames();
+    }
+
     @Test
     public void testCreateEmployee() {
         EmployeeCreateRequest request = new EmployeeCreateRequest();
@@ -94,7 +93,6 @@ class ApiApplicationTest {
         verify(employeeService, times(1)).createEmployee(request);
     }
 
-    /*
     @Test
     public void testDeleteEmployeeById() {
         String id = "1";
@@ -106,5 +104,4 @@ class ApiApplicationTest {
         assertEquals(ResponseEntity.ok(name), response);
         verify(employeeService, times(1)).deleteEmployeeById(id);
     }
-    */
 }
